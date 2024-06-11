@@ -1,3 +1,9 @@
+# Info
+CUDA version: 12.4.1
+
+## Instructions
+if your CUDA doesn't match, update the `FROM` line in [Dockerfile](Dockerfile) based on tags from [here](https://hub.docker.com/r/nvidia/cuda)
+
 # Usage
 ```
 docker build -t comfyui .
