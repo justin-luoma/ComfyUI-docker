@@ -66,11 +66,12 @@ done
 if [[ "$docker_extras" != "" ]]; then
   docker run \
   -p "$port:8188" \
-  -v "${models_path}:/app/ComfUI/models" \
+  -v "${models_path}:/app/ComfyUI/models" \
   -v "${output_path}:/app/ComfyUI/output" \
   -v "${input_path}:/app/ComfyUI/input" \
   -v "${workflows_path}:/app/ComfyUI/workflows" \
   -v comfyui_nodes:/app/ComfyUI/custom_nodes \
+  -v comfyui_venv:/app/venv \
   --gpus all \
   --name comfyui \
   "$docker_extras" \
@@ -78,7 +79,7 @@ if [[ "$docker_extras" != "" ]]; then
 else
   docker run \
     -p "$port:8188" \
-    -v "${models_path}:/app/ComfUI/models" \
+    -v "${models_path}:/app/ComfyUI/models" \
     -v "${output_path}:/app/ComfyUI/output" \
     -v "${input_path}:/app/ComfyUI/input" \
     -v "${workflows_path}:/app/ComfyUI/workflows" \
