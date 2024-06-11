@@ -20,10 +20,6 @@ RUN /micromamba -p /venv run pip install torch torchvision torchaudio
 
 RUN /micromamba -p /venv run pip install -r /app/ComfyUI/requirements.txt
 
-WORKDIR /app/ComfyUI/custom_nodes/
-
-RUN git clone https://github.com/ltdrdata/ComfyUI-Manager
-
 WORKDIR /
 
 COPY init.sh /init.sh
